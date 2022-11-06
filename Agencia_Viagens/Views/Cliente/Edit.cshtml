@@ -1,0 +1,88 @@
+﻿@model Agencia_Viagens.Models.Cliente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<style>
+    h1{
+        color:#191970;
+        text-align:center;
+        
+    }
+
+    h3{
+        padding-top:20px;
+    }
+
+    a{
+        text-decoration:none;
+        color:black;
+        font-size:16px;
+    }
+
+    .form-group{
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    
+</style>
+
+<h1>Talent Route</h1>
+<hr />
+
+<h3>Editar Cliente</h3>
+
+<hr />
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ClienteId" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataNascimento" class="control-label"></label>
+                <input asp-for="DataNascimento" class="form-control" />
+                <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Origem" class="control-label"></label>
+                <input asp-for="Origem" class="form-control" />
+                <span asp-validation-for="Origem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destino" class="control-label"></label>
+                <input asp-for="Destino" class="form-control" />
+                <span asp-validation-for="Destino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataIda" class="control-label"></label>
+                <input asp-for="DataIda" class="form-control" />
+                <span asp-validation-for="DataIda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataVolta" class="control-label"></label>
+                <input asp-for="DataVolta" class="form-control" />
+                <span asp-validation-for="DataVolta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-info" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+</>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
